@@ -20,21 +20,21 @@ cd askGPT-3
 ```
 6. Assumindo que você já tem o python3 instado, crie um ambiente virtual:
 
-```
+~~~python
 python3 -m venv openai
-````
+~~~
 7. Ative o seu ambiente virtual
 ```
 source openai/bin/activate
 ```
 8. Instale os modulos necessários
-```
+~~~python
 pip3 install -r requirements.txt
-```
+~~~
 9. Execute o programa e faça sua pergunta como no exemplo abaixo:
-```
+~~~python
 python3 askGPT-3.py "What are the 5 most important skills of SREs?"
-```
+~~~
 A saída será algo do tipo:
 
 ![imagem](/images/output.png)
