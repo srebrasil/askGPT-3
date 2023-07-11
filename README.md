@@ -1,40 +1,37 @@
-# askGPT-3
-Demo code for OpenAI GPT-3 bot
+# GPT-3 Prompt Generator
 
-## Como utilizar?
-1. Acesse o portal do [OpenAI](https://beta.openai.com/signup) e crie uma conta caso ainda não tenha.
-2. Acesso o sandbox [OpenAI](https://beta.openai.com/sign) e copie sua [API Key](https://beta.openai.com/account/api-keys)
-3. Exporte a variável OPENAI_API_KEY usando sua chave de API (não compartilhe sua chave com ninguém!)
+This project is a simple Python script that uses the OpenAI GPT-3 API to generate text based on a given prompt. The script takes a prompt as a command line argument, passes it to the GPT-3 API, and returns the top choice from the API as a string to the command line.
+
+## Installation
+
+To use this script, you will need to have an OpenAI API key. You can sign up for an API key [here](https://beta.openai.com/signup/).
+
+Once you have your API key, you can set it as an environment variable in your terminal:
 
 ```
-export OPENAI_API_KEY='xxxxxxxxxx'
+export OPENAI_API_KEY='your_api_key_here'
 ```
 
-4. Clone o repositório
-```
-git clone https://github.com/srebrasil/askGPT-3.git
-```
-5. Acesse o novo diretório
-```
-cd askGPT-3
-```
-6. Assumindo que você já tem o python3 instado, crie um ambiente virtual:
+You will also need to install the `openai` Python package. You can do this using `pip`:
 
-~~~python
-python3 -m venv openai
-~~~
-7. Ative o seu ambiente virtual
 ```
-source openai/bin/activate
+pip install openai
 ```
-8. Instale os modulos necessários
-~~~python
-pip3 install -r requirements.txt
-~~~
-9. Execute o programa e faça sua pergunta como no exemplo abaixo:
-~~~python
-python3 askGPT-3.py "What are the 5 most important skills of SREs?"
-~~~
-A saída será algo do tipo:
 
-![imagem](/images/output.png)
+## Usage
+
+To use the script, simply run it from the command line with a prompt wrapped in quotes:
+
+```
+python3 askGPT-3.py "This is a prompt for GPT-3"
+```
+
+The script will then pass the prompt to the GPT-3 API and return the top choice as a string to the command line.
+
+## Contributing
+
+If you would like to contribute to this project, feel free to submit a pull request. 
+
+## References
+
+- [OpenAI API documentation](https://beta.openai.com/docs/api-reference/introduction)
