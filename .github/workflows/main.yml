@@ -34,7 +34,7 @@ jobs:
           OPENAI_API_BASE: ${{ secrets.OPENAI_API_BASE }}
           GIT_EMAIL: ${{ secrets.GIT_EMAIL }}
           GIT_USERNAME: ${{ secrets.GIT_USERNAME }}
-          FILENAME: askGPT-3.py
+          FILENAME: "askGPT-3.py"
 
       - name: Create new README.md file
         run: |
