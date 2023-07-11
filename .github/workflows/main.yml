@@ -15,6 +15,11 @@ jobs:
         with:
           repository: rcsousa/openai-readme
           path: .
+      
+      - name: Checkout action
+        uses: actions/checkout@v3
+        with:
+          path: main
 
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -25,7 +30,7 @@ jobs:
         run: pip install -r requirements.txt
         
       - name: List file
-        run: ls -lia
+        run: ls -lia main/
         
 
       - name: Run script
@@ -37,7 +42,7 @@ jobs:
           OPENAI_API_BASE: ${{ secrets.OPENAI_API_BASE }}
           GIT_EMAIL: ${{ secrets.GIT_EMAIL }}
           GIT_USERNAME: ${{ secrets.GIT_USERNAME }}
-          FILENAME: ${{ secrets.FILENAME }}
+          FILENAME: main/askGPT-3.py
 
       - name: Create new README.md file
         run: |
