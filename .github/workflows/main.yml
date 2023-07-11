@@ -12,14 +12,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-        with:
-          repository: rcsousa/openai-readme
-          path: .
-      
+
       - name: Checkout action
         uses: actions/checkout@v3
         with:
-          path: main
+          repository: rcsousa/openai-readme
+          path: ai-readme
 
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -27,22 +25,22 @@ jobs:
           python-version: 3.10.6
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: pip install -r ai-readme/requirements.txt
         
       - name: List file
-        run: ls -lia main/
+        run: ls -lia 
         
 
       - name: Run script
         id: run_script
         run: |
-          python app.py
+          python openai-readme/app.py
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_API_BASE: ${{ secrets.OPENAI_API_BASE }}
           GIT_EMAIL: ${{ secrets.GIT_EMAIL }}
           GIT_USERNAME: ${{ secrets.GIT_USERNAME }}
-          FILENAME: main/askGPT-3.py
+          FILENAME: askGPT-3.py
 
       - name: Create new README.md file
         run: |
